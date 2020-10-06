@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    image: node:12
+    command: sh -c "yarn && yarn start"
+    ports:
+      - 3000:3000
+    working_dir: /web
+    volumes:
+      - .:/web
+    env_file:
+      - .env.web
+    stdin_open: true
+    tty: true
